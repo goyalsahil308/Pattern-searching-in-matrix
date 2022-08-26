@@ -4,13 +4,13 @@ from time import time
 a=np.empty((1000,1000),dtype=np.ndarray)
 for i in range(1000):
     for j in range(1000):
-        a[i][j]=np.random.randint(2,size=(2))
+        a[i][j]=np.random.randint(2,size=(2,2))
         
         
 b=np.empty((2,2),dtype=np.ndarray)
 for i in range(2):
     for j in range(2):
-        b[i][j]=np.random.randint(2,size=(2))
+        b[i][j]=np.random.randint(2,size=(2,2))
  
 
 # A represents bigger matrix B represents smaller matrix
@@ -37,7 +37,7 @@ def SearchSubMatrix(A,B,M,N,m,n):
 
                 if found:
                     answer.append((i,j))
-                    break 
+                    
     end_time=time()
     print(f"Toatal time taken is :{end_time-start_time}")
     return answer
