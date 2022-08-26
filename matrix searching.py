@@ -19,6 +19,8 @@ for i in range(2):
 def SearchSubMatrix(A,B,M,N,m,n):
     start_time=time()
     if M<m or N<n:
+        end_time=time()
+        print(f"Total time taken by execution is {start_time-end_time}")
         return (-1,-1)
     answer =[]
 
