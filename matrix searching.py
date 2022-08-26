@@ -31,7 +31,7 @@ def SearchSubMatrix(A,B,M,N,m,n):
             if np.array_equal(A[i][j],B[0][0]):
                 for r in range(0,m): 
                     for s in range(0,n):
-                        if np.array_equal(B[r][s],A[r+i][s+i])==False:
+                        if np.array_equal(B[r][s],A[r+i][s+j])==False:
                             found = False
                             break 
 
