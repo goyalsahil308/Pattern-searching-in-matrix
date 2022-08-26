@@ -19,7 +19,7 @@ for i in range(2):
 def SearchSubMatrix(A,B,M,N,m,n):
     start_time=time()
     if M<m or N<n:
-        return 
+        return (-1,-1)
     answer =[]
 
     for i in range(0,M-m+1): 
