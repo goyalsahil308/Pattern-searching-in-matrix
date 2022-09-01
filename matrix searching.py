@@ -8,14 +8,16 @@ from time import time
 a=np.empty((2000,2000),dtype=np.ndarray)    # Create empty numpy array of 1000 * 1000
 for i in range(2000):
     for j in range(2000):
-        a[i][j]=np.random.randint(100,size=(2,2))     # Fill the array with random arrays of 2 * 2 conatinings random integars from range 0 to 99
+        num=np.random.randint(100,size=(2,2))         # Fill the array with random arrays of 2 * 2 conatinings random integars from range 0 to 99
+        a[i][j]=np.asmatrix(num)
 
 
 # b=None
 b=np.empty((2,2),dtype=np.ndarray)
 for i in range(2):
     for j in range(2):
-        b[i][j]=np.random.randint(100,size=(2,2))
+        num=np.random.randint(100,size=(2,2))
+        b[i][j]=np.asmatrix(num)
 
 # To test the time taken by algo to search pattern which is present at the last of array
 # a[997][995]=np.array([
