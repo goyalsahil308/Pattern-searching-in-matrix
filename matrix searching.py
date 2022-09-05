@@ -8,15 +8,15 @@ from time import time
 a=np.empty((1000,1000),dtype=np.ndarray)    # Create empty numpy array of 1000 * 1000
 for i in range(1000):
     for j in range(1000):
-        num=np.random.randint(100,size=(2,2))         # Fill the array with random arrays of 2 * 2 conatinings random integars from range 0 to 99
+        num=np.random.randint(2,size=(2,2))         # Fill the array with random arrays of 2 * 2 conatinings random integars from range 0 to 99
         a[i][j]=np.asmatrix(num)
 
 
 # b=None
-b=np.empty((3,3),dtype=np.ndarray)
-for i in range(3):
-    for j in range(3):
-        num=np.random.randint(100,size=(2,2))
+b=np.empty((2,2),dtype=np.ndarray)
+for i in range(2):
+    for j in range(2):
+        num=np.random.randint(2,size=(2,2))
         b[i][j]=np.asmatrix(num)
 
 # To test the time taken by algo to search pattern which is present at the last of array
@@ -79,12 +79,12 @@ def SearchSubMatrix(A,B,M,N,m,n):
                         
                         if np.array_equal(B[r][s],A[r+i][s+j])==False:
                              unmatch+=1
-                             if unmatch>0.25*count:
+                             if unmatch>0.2*count:
                                  found = False
                                  break
 
                 if found:
-                    match=round((count-unmatch)/count*100,3)
+                    match=round((count-unmatch)/count*100,2)
                     answer.append((i,j,match))
                    
                     
@@ -92,5 +92,5 @@ def SearchSubMatrix(A,B,M,N,m,n):
     print(f"Toatal time taken is :{end_time-start_time}")
     return answer
 
-print(SearchSubMatrix(a,b,1000,1000,3,3))    
+print(SearchSubMatrix(a,b,1000,1000,2,2))    
 
